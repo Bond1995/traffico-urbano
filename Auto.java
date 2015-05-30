@@ -1,39 +1,31 @@
 public class Auto extends Elemento {
+
+	private final static int VELOCITA_AUTO = 2;
+	private final static String AUTO = ">";
 	
-	private final static int VELOCITA_AUTO = 3;
-	
-	public Auto( int x, int y, int velocità){
+	public Auto(int riga, int colonna, int priority, String placeholder) {
 		
-		super(x,  y, VELOCITA_AUTO);
+		super(riga,colonna,priority, AUTO);
 		
 	}
 	
+	public Auto(int priority, String placeholder) {
+		
+		super(priority, AUTO);
+		
+	}
+
 	@Override
-	public String toString(){
+	public Coordinate getProssimaPosizone(){
 		
-		return "A";
+		int prossimaPosizione= posizione.getColonna() + VELOCITA_AUTO;
 		
-	}
-	
-	@Override
-	public int getAscissa(){
+		posizione.setColonna(prossimaPosizione);
 		
-		return x;
+		return posizione;
 		
 	}
 	
-	@Override
-	public int getOrdinata(){
-		
-		return y;
-		
-	}
 	
-	@Override
-	public void move(){
-		
-		x+= VELOCITA_AUTO;
-	
-	}
 
 }
