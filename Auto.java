@@ -1,17 +1,18 @@
 public class Auto extends Elemento {
 
 	private final static int VELOCITA_AUTO = 2;
+	private final static int PRIORITY_AUTO = 1;
 	private final static String AUTO = ">";
 	
 	public Auto(int riga, int colonna, int priority, String placeholder) {
 		
-		super(riga,colonna,priority, AUTO);
+		super(riga,colonna,PRIORITY_AUTO, AUTO);
 		
 	}
 	
 	public Auto(int priority, String placeholder) {
 		
-		super(priority, AUTO);
+		super(PRIORITY_AUTO, AUTO);
 		
 	}
 
@@ -29,3 +30,5 @@ public class Auto extends Elemento {
 	
 
 }
+
+
