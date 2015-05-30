@@ -1,5 +1,3 @@
-package ing.unibs.esercitazioni.traffico;
-
 import ing.unibs.esercitazioni.mylib.MyMenu;
 import ing.unibs.esercitazioni.mylib.MyUtil;
 
