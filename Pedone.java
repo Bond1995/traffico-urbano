@@ -1,39 +1,32 @@
-public class Auto extends Elemento {
+public class Pedone extends Elemento {
+
+	private final static int VELOCITA_PEDONE = 1;
+	private final static String PEDONE = "*";
 	
-	private final static int VELOCITA_AUTO = 3;
-	
-	public Auto( int x, int y, int velocità){
+	public Pedone(int riga, int colonna, int priority, String placeholder) {
 		
-		super(x,  y, VELOCITA_AUTO);
+		super(riga,colonna,priority, PEDONE);
 		
 	}
 	
-	@Override
-	public String toString(){
+	public Pedone(int priority, String placeholder) {
 		
-		return "A";
+		super(priority, PEDONE);
 		
-	}
-	
-	@Override
-	public int getAscissa(){
-		
-		return x;
-		
-	}
-	
-	@Override
-	public int getOrdinata(){
-		
-		return y;
-		
-	}
-	
-	@Override
-	public void move(){
-		
-		x+= VELOCITA_AUTO;
-	
 	}
 
+	@Override
+	public Coordinate getProssimaPosizone(){
+		
+		int prossimaPosizione= posizione.getRiga() + VELOCITA_PEDONE;
+		
+		posizione.setRiga(prossimaPosizione);
+		
+		return posizione;
+		
+	}
+	
+	
+
 }
+
